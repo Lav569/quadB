@@ -47,7 +47,7 @@ async function fetchDataAndStore() {
 app.get('', async (req, res) => {
   try {
     const connection = await pool.getConnection();
-    const [rows] = await connection.query('SELECT * FROM hodlinfo_data LIMIT 5');
+    const [rows] = await connection.query('SELECT * FROM hodlinfo_data LIMIT 10');
     connection.release();
     console.log("Data retrieved successfully");
     res.json(rows);
